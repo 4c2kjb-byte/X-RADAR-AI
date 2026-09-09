@@ -1,0 +1,484 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #070a12;
+    --surface: #0d1220;
+    --surface-light: #121a2a;
+    --border: rgba(255, 255, 255, 0.08);
+
+    --text: #f7f9fc;
+    --muted: #8e9ab0;
+
+    --accent: #6ea8ff;
+    --accent-light: #8b7cff;
+
+    --success: #4ade80;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(110, 168, 255, 0.13),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 10% 40%,
+            rgba(139, 124, 255, 0.09),
+            transparent 30%
+        ),
+
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    width: min(900px, calc(100% - 30px));
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-light)
+        );
+
+    color: #07101f;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+.brand h1 {
+    font-size: 18px;
+
+    margin-bottom: 3px;
+}
+
+.brand p {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.status {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow:
+        0 0 12px
+        rgba(74, 222, 128, 0.6);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    flex: 1;
+
+    padding: 50px 0 25px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+
+    max-width: 720px;
+
+    margin: auto;
+
+    margin-bottom: 45px;
+}
+
+.badge {
+    display: inline-block;
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    margin-bottom: 16px;
+}
+
+.hero h2 {
+    font-size: clamp(32px, 6vw, 54px);
+
+    line-height: 1.08;
+
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-container {
+    width: 100%;
+}
+
+.chat {
+    min-height: 360px;
+
+    padding: 10px 0 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.message {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+.message.ai {
+    justify-content: flex-start;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    background: var(--surface-light);
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+.bubble {
+    max-width: 80%;
+
+    padding: 14px 16px;
+
+    border-radius: 17px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    line-height: 1.75;
+
+    font-size: 14px;
+
+    white-space: pre-wrap;
+}
+
+.message.user .bubble {
+    background:
+        linear-gradient(
+            135deg,
+            #17233a,
+            #111a2b
+        );
+}
+
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+.suggestions {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 5px 0 12px;
+
+    scrollbar-width: none;
+}
+
+.suggestions::-webkit-scrollbar {
+    display: none;
+}
+
+.suggestion {
+    flex-shrink: 0;
+
+    padding: 10px 13px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: 0.2s;
+}
+
+.suggestion:hover {
+    color: var(--text);
+
+    border-color:
+        rgba(110, 168, 255, 0.4);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   COMPOSER
+========================= */
+
+.composer {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 9px;
+
+    padding: 10px;
+
+    border: 1px solid var(--border);
+
+    background:
+        rgba(13, 18, 32, 0.9);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+}
+
+textarea {
+    flex: 1;
+
+    resize: none;
+
+    min-height: 42px;
+    max-height: 140px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    padding: 9px;
+}
+
+textarea::placeholder {
+    color: #647086;
+}
+
+.composer button {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 11px 18px;
+
+    background: var(--accent);
+
+    color: #07101f;
+
+    font-family: inherit;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.composer button:hover {
+    transform: translateY(-1px);
+
+    filter: brightness(1.08);
+}
+
+.composer button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 20px 0 25px;
+
+    text-align: center;
+
+    color: #59657a;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .app {
+        width: min(100% - 20px, 900px);
+    }
+
+    .header {
+        padding: 20px 0;
+    }
+
+    .status {
+        font-size: 11px;
+    }
+
+    .main {
+        padding-top: 35px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .bubble {
+        max-width: 88%;
+    }
+
+    .composer button {
+        padding: 11px 14px;
+    }
+}
