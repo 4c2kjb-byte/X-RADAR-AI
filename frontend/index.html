@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Radar AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="logo">X</div>
+                <div>
+                    <h1>X Radar AI</h1>
+                    <p>ذكاء اصطناعي يفكر معك في الـ For You</p>
+                </div>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                متصل
+            </div>
+        </header>
+        <!-- Main -->
+        <main class="main">
+            <section class="hero">
+                <span class="badge">X RADAR</span>
+                <h2>
+                    أنت تتصفح الـFor You،
+                    <br>
+                    وهو يفكر فيه معك.
+                </h2>
+                <p>
+                    اسأل الذكاء الاصطناعي عن الأشياء التي ظهرت لك
+                    في الـFor You، وسيحللها ويبحث عن الأنماط والمواضيع
+                    والإشارات المهمة.
+                </p>
+            </section>
+            <!-- Chat -->
+            <section class="chat-container">
+                <div id="chat" class="chat">
+                    <div class="message ai">
+                        <div class="avatar">AI</div>
+                        <div class="bubble">
+                            <p>
+                                جاهز 🔭
+                            </p>
+                            <p>
+                                اسألني مثل:
+                                <br>
+                                «وش أكثر شيء كان يدور اليوم؟»
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Suggestions -->
+                <div class="suggestions">
+                    <button class="suggestion">
+                        وش أكثر شيء كان يدور اليوم؟
+                    </button>
+                    <button class="suggestion">
+                        ركز على AI
+                    </button>
+                    <button class="suggestion">
+                        هات أفضل 5 منشورات
+                    </button>
+                    <button class="suggestion">
+                        وش الشيء الغريب؟
+                    </button>
+                </div>
+                <!-- Input -->
+                <form id="askForm" class="composer">
+                    <textarea
+                        id="question"
+                        rows="1"
+                        placeholder="اسأل X Radar..."
+                        autocomplete="off"
+                    ></textarea>
+                    <button
+                        type="submit"
+                        id="sendButton"
+                    >
+                        إرسال
+                    </button>
+                </form>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                X Radar يحلل المنشورات التي يجمعها من الـFor You
+                ولا يقوم بالنشر أو الإعجاب أو المتابعة.
+            </p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
